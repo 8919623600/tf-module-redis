@@ -18,7 +18,7 @@ resource "aws_elasticache_parameter_group" "redis_pg" {
   family               = var.REDIS_FAMILY
 }
 
-resource "aws_db_subnet_group" "redis" {
+resource "aws_elasticache_subnet_group" "redis" {
   name                 = "roboshop-${var.ENV}-redis_subnetgroup"
   subnet_ids           = data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNET_IDS
     
