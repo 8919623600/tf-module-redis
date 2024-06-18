@@ -19,7 +19,7 @@ resource "aws_elasticache_parameter_group" "redis_pg" {
 }
 
 resource "aws_elasticache_subnet_group" "redis" {
-  name                 = "roboshop-${var.ENV}-redis_subnetgroup"
+  name                 = "roboshop-${var.ENV}-redis-subnetgroup"
   subnet_ids           = data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNET_IDS
     
 }
